@@ -1,7 +1,9 @@
 module Main exposing (..)
 
-import Html exposing (Html, text, div, h1, img)
+import Html exposing (Html, text, div, h1, img, li, ul)
 import Html.Attributes exposing (src)
+
+import People exposing (people, peopleDisplay)
 
 
 ---- MODEL ----
@@ -36,8 +38,13 @@ update msg model =
 view : Model -> Html Msg
 view model =
     div []
-        [ img [ src "/logo.svg" ] []
-        , h1 [] [ text "Your Elm App is working!" ]
+        [ img [ src "/logo.png" ] []
+        , h1 [] [ text "Welcome to Time Sink" ]
+        , ul []
+            [ li [] [ text "Add a job" ]
+            , li [] [ text "Take a job" ]
+            ]
+        , peopleDisplay people
         ]
 
 
